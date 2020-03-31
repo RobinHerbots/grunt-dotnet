@@ -36,14 +36,17 @@ var Test = (function () {
 
 	Test.prototype.expect = function (args, result) {
 		if (!result) {
-			result = [ null, "", 0 ];
+			result = [null, "", 0];
 		}
-		this.expectations.push({ args: args, result: result });
+		this.expectations.push({args: args, result: result});
 		return this;
 	};
 
 	Test.prototype.run = function (cb) {
 		var task = new Task(this);
+		//make equal to grunt task options
+		task.data = {};
+		task.data.options = this.options;
 
 		var self = this;
 		var exec = function () {

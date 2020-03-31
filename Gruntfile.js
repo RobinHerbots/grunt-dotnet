@@ -54,14 +54,6 @@ module.exports = function (grunt) {
 					groups: "bytype"
 				}
 			}
-		},
-		dotnet_restore: {
-			restore: {
-				solution: "test",
-				options : {
-					project: "testezea"
-				}
-			}
 		}
 	});
 

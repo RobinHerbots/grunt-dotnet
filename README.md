@@ -253,7 +253,8 @@ grunt.initConfig({
   dotnet_restore: {
     your_target: {
         options: {
-            project: ""
+            project: "project | solution",
+            source: [nuget package sources]
         }
     },
   },
@@ -266,6 +267,12 @@ Default: ""
  
 The project or solution file to operate on. If a file is not specified, the command will search the current directory for one.
  
+#### options.source
+Type: string || string[]  
+Default: null
+ 
+The NuGet package source(s) to use for the restore.
+
 ## The "dotnet_run" task
 Build and run a .NET project output.
   
