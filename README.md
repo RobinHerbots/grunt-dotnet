@@ -45,13 +45,18 @@ grunt.initConfig({
   dotnet_build: {
     your_target: {
         options: {
-        
+            project: "project | solution",
         }
     },
   },
 });
-```
+ ```
 ### Options
+#### options.project  
+Type: String  
+Default: ""
+  
+The project or solution file to operate on. If a file is not specified, the command will search the current directory for one.
 
 ## The "dotnet_build_server" task
 Interact with servers started by a build.
@@ -63,13 +68,41 @@ grunt.initConfig({
   dotnet_build_server: {
     your_target: {
         options: {
-        
+            shutdown: true,
+            msbuild: true,
+            vbcscompiler: false,
+            razor: true 
         }
     },
   },
 });
 ```
 ### Options
+#### options.shutdown
+Type: boolean  
+Default: false
+
+Shuts down build servers that are started from dotnet. By default, all servers are shut down.
+
+##### options.msbuild
+Type: boolean  
+Default: false
+
+Shut down the MSBuild build server.
+
+##### options.vbcscompiler
+Type: boolean  
+Default: false
+
+Shut down the VB/C# compiler build server.
+
+##### options.razor
+Type: boolean  
+Default: false
+
+Shut down the Razor build server.
+
+
 
 ## The "dotnet_clean" task
 Clean build outputs of a .NET project.
@@ -82,13 +115,18 @@ grunt.initConfig({
   dotnet_clean: {
     your_target: {
         options: {
-        
+            project: "project | solution",
         }
     },
   },
 });
-```
+ ```
 ### Options
+#### options.project  
+Type: String  
+Default: ""
+  
+The project or solution file to operate on. If a file is not specified, the command will search the current directory for one.
 
 ## The "dotnet_dev_certs" task
 Create and manage development certificates.
@@ -139,13 +177,54 @@ grunt.initConfig({
   dotnet_msbuild: {
     your_target: {
         options: {
-        
+            project: "project | solution",
+            target: ["Clean", "Rebuild"],
+            property: {
+                OutputPath: "build",
+                WarningLevel: 2,
+                PublishProfile: "Staging",
+                PackageVersion: "1.0.0",
+                FileVersion: "1.0.0",
+                Version: "1.0.0",
+                AssemblyVersion: "1.0.0"            
+                ...
+            },
+            verbosity: minimal   
         }
     },
   },
 });
-```
+ ```
 ### Options
+#### options.project  
+Type: String  
+Default: ""
+  
+Builds the specified targets in the project file. If
+a project file is not specified, MSBuild searches the
+current working directory for a file that has a file
+extension that ends in "proj" and uses that file.  If
+a directory is specified, MSBuild searches that
+directory for a project file.
+
+#### options.target  
+Type: String[]  
+Default: null
+
+Build these targets in this project.
+
+#### options.property
+Type: Object  
+Default: null
+
+Set or override these project-level properties.
+
+#### options.verbosity
+Type: String  
+Default: "quiet"
+
+Display this amount of information in the event log.
+The available verbosity levels are: q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic].
 
 ## The "dotnet_new" task
 Create a new .NET project or file.
