@@ -253,7 +253,7 @@ grunt.initConfig({
   dotnet_restore: {
     your_target: {
         options: {
-        
+            project: ""
         }
     },
   },

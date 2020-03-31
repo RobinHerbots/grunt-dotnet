@@ -10,8 +10,8 @@ module.exports = function (grunt) {
 				var args = Array.prototype.slice.call(arguments);
 				var callback = args.pop();
 				var options = self.options({
-					verbose: false,
-					dryRun: false
+					verbose: grunt.option("verbose"),
+					dryRun: grunt.option("no-write") || grunt.option("dry-run")
 				});
 				var spawnOpts = {};
 
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 				}
 
 				if (grunt.option("no-write") || grunt.option("dry-run") || options.dryRun) {
-					grunt.log.write("dotnet " + JSON.stringify(args));
+					grunt.log.write("dotnet " + args.join(" "));
 					done();
 				} else {
 					grunt.util.spawn({
