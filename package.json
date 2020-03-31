@@ -1,0 +1,48 @@
+{
+  "name": "@robinherbots/grunt-dotnet",
+  "description": "Grunt integration for Powershell WebAppPool commands.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/RobinHerbots/grunt-dotnet",
+  "author": "Robin Herbots <robin.herbots@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RobinHerbots/grunt-dotnet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RobinHerbots/grunt-dotnet/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/RobinHerbots/grunt-dotnet/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-eslint": "^22.0.0",
+    "grunt-mocha-cli": "^6.0.0",
+    "mocha": "^7.1.1",
+    "grunt": "~1.1.0",
+    "grunt-bump": "^0.8.0",
+    "load-grunt-tasks": "^5.1.0",
+    "@robinherbots/grunt-available-tasks": "^0.6.4"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "main": "Gruntfile.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "grunt": "~1.1.0",
+    "flopmang": "^1.0.0"
+  },
+  "license": "MIT"
+}
