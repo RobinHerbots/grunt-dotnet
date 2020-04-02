@@ -27,13 +27,67 @@ grunt.initConfig({
   dotnet_add: {
     your_target: {
         options: {
-        
+            project: "project | solution",
+            reference: "referenceProject", 
+            package: "NugetPackage",
+            version: "1.0.0",
+            no_restore: true,
+            package_directory: "package_directory",
+            source: "nugetsource",
+            framework: "dotnetcore3.1"
         }
     },
   },
 });
-```
+ ```
 ### Options
+#### options.project  
+Type: String  
+Default: ""
+
+The project file to operate on. If a file is not specified, the command will search the current directory for one.
+
+#### options.reference
+Type: String  
+Default: null
+
+The paths to the projects to add as references.
+
+##### options.framework
+Type: String  
+Default: null
+
+Add the reference only when targeting a specific framework.
+
+#### options.package
+Type: String  
+Default: null
+
+The package reference to add.
+
+##### options.version
+Type: String  
+Default: null
+
+The version of the package to add.
+
+##### options.framework
+Type: String  
+Default: null
+
+Add the reference only when targeting a specific framework.
+
+##### options.no_restore
+Type: Boolean  
+Default: false
+
+Add the reference without performing restore preview and compatibility check.
+
+##### options.source
+Type: String  
+Default: null
+
+The NuGet package source to use during the restore.
 
 ## The "dotnet_build" task
 Build a .NET project.
