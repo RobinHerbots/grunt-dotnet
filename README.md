@@ -329,13 +329,19 @@ grunt.initConfig({
   dotnet_pack: {
     your_target: {
         options: {
-        
+            project: "project | solution",
         }
     },
   },
 });
-```
+ ```
 ### Options
+#### options.project  
+Type: String  
+Default: ""
+  
+The project or solution file to operate on. If a file is not specified, the command will search the current directory for one.
+
 
 ## The "dotnet_publish" task
 Publish a .NET project for deployment.
