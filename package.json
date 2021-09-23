@@ -24,16 +24,18 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-eslint": "^22.0.0",
-    "grunt-mocha-cli": "^6.0.0",
-    "mocha": "^7.1.1",
-    "grunt": "~1.1.0",
+    "grunt-eslint": "^23.0.0",
+    "grunt-mocha-cli": "^7.0.0",
+    "mocha": "^9.1.1",
+    "grunt": "~1.4.1",
     "grunt-bump": "^0.8.0",
     "load-grunt-tasks": "^5.1.0",
     "@robinherbots/grunt-available-tasks": "^0.6.4"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "grunt",
+    "dotnet"
   ],
   "main": "Gruntfile.js",
   "directories": {
@@ -41,7 +43,7 @@
     "test": "test"
   },
   "dependencies": {
-    "grunt": "~1.1.0",
+    "grunt": "~1.4.1",
     "flopmang": "^1.0.0"
   },
   "license": "MIT"
